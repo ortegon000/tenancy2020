@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5cbc4c6-176d-422b-8e55-8953fdda8d23" name="Default Changelist" comment="" />
+    <list default="true" id="d5cbc4c6-176d-422b-8e55-8953fdda8d23" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/tenancy.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/tenancy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,7 +118,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1XzuQIGLCL3TeZBh6QzK4evd0pW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -123,8 +130,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/migrations/tenant" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Learning\test\tenancy\database\migrations\tenant" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Learning\test\tenancy\database\migrations\tenant" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -157,6 +172,9 @@
       <workItem from="1582061227936" duration="2369000" />
       <workItem from="1582154517783" duration="2338000" />
       <workItem from="1582220071497" duration="448000" />
+      <workItem from="1582221580487" duration="1063000" />
+      <workItem from="1582245902919" duration="61000" />
+      <workItem from="1582307431736" duration="5345000" />
     </task>
     <servers />
   </component>
@@ -168,5 +186,13 @@
       <screen x="1982" y="26" width="1858" height="1080" />
     </state>
     <state x="2503" y="224" key="#Composer/62.0.1858.1080/1982.26.1858.1080@1982.26.1858.1080" timestamp="1582061268139" />
+    <state x="721" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582307667113">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="721" y="295" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/62.0.1858.1080/1982.26.1858.1080@62.0.1858.1080" timestamp="1582307667113" />
+    <state x="2691" y="321" key="FileChooserDialogImpl" timestamp="1582245958220">
+      <screen x="1982" y="26" width="1858" height="1080" />
+    </state>
+    <state x="2691" y="321" key="FileChooserDialogImpl/62.0.1858.1080/1982.26.1858.1080@1982.26.1858.1080" timestamp="1582245958220" />
   </component>
 </project>

@@ -6,8 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+
+use Hyn\Tenancy\Models\Hostname;
+use Hyn\Tenancy\Models\Website;
+use Hyn\Tenancy\Repositories\HostnameRepository;
+use Hyn\Tenancy\Repositories\WebsiteRepository;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class RegisterController extends Controller
 {
@@ -49,10 +57,16 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $fqdn = $data['fqdn'] . "." . env('APP_DOMAIN');
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'fqdn' => ['required', 'string', 'max:20', Rule::unique('hostnames')
+                ->where( function ($query) use ($fqdn) {
+                    return $query->where('fqdn', $fqdn);
+                })],
+            'password' => ['required', 'string', 'min:3', 'confirmed'],
         ]);
     }
 
@@ -69,5 +83,33 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+
+    protected function registered(Request $request, $user)
+    {
+        $website = $this->website();
+
+        $hostname = $this->hostname($request);
+
+        app(HostnameRepository::class)->attach($hostname, $website);
+    }
+
+    protected function website()
+    {
+        $website = new Website;
+
+        $website->uuid = Str::random(10);
+
+        return app(WebsiteRepository::class)->create($website);
+    }
+
+    protected function hostname(Request $request)
+    {
+        $hostname = new Hostname();
+
+        $hostname->fqdn = $request->fqdn . "." . env('APP_DOMAIN');
+
+        return app(HostnameRepository::class)->create($hostname);
     }
 }
