@@ -39,19 +39,22 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="fqdn" class="col-md-4 col-form-label text-md-right">Hostname</label>
+                        @if(! $tenantName)
+                            <div class="form-group row">
+                                <label for="fqdn" class="col-md-4 col-form-label text-md-right">Hostname</label>
 
-                            <div class="col-md-6">
-                                <input id="fqdn" type="text" class="form-control @error('fqdn') is-invalid @enderror" name="fqdn" value="{{ old('fqdn') }}" required autocomplete="email">
+                                <div class="col-md-6">
+                                    <input id="fqdn" type="text" class="form-control @error('fqdn') is-invalid @enderror" name="fqdn" value="{{ old('fqdn') }}" required autocomplete="email">
 
-                                @error('fqdn')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                    @error('fqdn')
+                                    <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
+                        @endif
+
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

@@ -4,7 +4,8 @@
     <list default="true" id="d5cbc4c6-176d-422b-8e55-8953fdda8d23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/tenancy.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/tenancy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,14 +131,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/migrations/tenant" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Tenant" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Learning\test\tenancy\app\Tenant" />
       <recent name="C:\wamp64\www\Learning\test\tenancy\database\migrations\tenant" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Learning\test\tenancy\database\migrations\tenant" />
     </key>
   </component>
@@ -175,6 +177,7 @@
       <workItem from="1582221580487" duration="1063000" />
       <workItem from="1582245902919" duration="61000" />
       <workItem from="1582307431736" duration="5345000" />
+      <workItem from="1582744592121" duration="3734000" />
     </task>
     <servers />
   </component>
@@ -194,5 +197,9 @@
       <screen x="1982" y="26" width="1858" height="1080" />
     </state>
     <state x="2691" y="321" key="FileChooserDialogImpl/62.0.1858.1080/1982.26.1858.1080@1982.26.1858.1080" timestamp="1582245958220" />
+    <state x="2744" y="485" key="NewPhpFileDialog" timestamp="1582748405934">
+      <screen x="1982" y="26" width="1858" height="1080" />
+    </state>
+    <state x="2744" y="485" key="NewPhpFileDialog/62.0.1858.1080/1982.26.1858.1080@1982.26.1858.1080" timestamp="1582748405934" />
   </component>
 </project>

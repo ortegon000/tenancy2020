@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use Hyn\Tenancy\Environment;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -16,6 +17,7 @@ use Hyn\Tenancy\Repositories\HostnameRepository;
 use Hyn\Tenancy\Repositories\WebsiteRepository;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
+use App\Tenant\User as TenantUser;
 
 class RegisterController extends Controller
 {
@@ -39,6 +41,8 @@ class RegisterController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+    protected $tenantName = null;
+
     /**
      * Create a new controller instance.
      *
@@ -47,6 +51,18 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+
+        $hostname = app(Environment::class)->hostname();
+
+        if ($hostname) {
+            $fqdn = $hostname->fqdn;
+            $this->tenantName = explode('.', $fqdn)[0];
+        }
+    }
+
+    public function showRegistrationForm()
+    {
+        return view('auth.register')->with('tenantName', $this->tenantName);
     }
 
     /**
@@ -57,15 +73,23 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        $fqdn = $data['fqdn'] . "." . env('APP_DOMAIN');
+        if ( ! $this->tenantName) {
+            $fqdn = $data['fqdn'] . "." . env('APP_DOMAIN');
+
+            return Validator::make($data, [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'fqdn' => ['required', 'string', 'max:20', Rule::unique('hostnames')
+                    ->where( function ($query) use ($fqdn) {
+                        return $query->where('fqdn', $fqdn);
+                    })],
+                'password' => ['required', 'string', 'min:3', 'confirmed'],
+            ]);
+        }
 
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'fqdn' => ['required', 'string', 'max:20', Rule::unique('hostnames')
-                ->where( function ($query) use ($fqdn) {
-                    return $query->where('fqdn', $fqdn);
-                })],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:tenant.users'],
             'password' => ['required', 'string', 'min:3', 'confirmed'],
         ]);
     }
@@ -78,21 +102,29 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = [
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-        ]);
+        ];
+
+        if ( ! $this->tenantName) {
+            return User::create($user);
+        }
+
+        return TenantUser::create($user);
     }
 
 
     protected function registered(Request $request, $user)
     {
-        $website = $this->website();
+        if ( ! $this->tenantName) {
+            $website = $this->website();
 
-        $hostname = $this->hostname($request);
+            $hostname = $this->hostname($request);
 
-        app(HostnameRepository::class)->attach($hostname, $website);
+            app(HostnameRepository::class)->attach($hostname, $website);
+        }
     }
 
     protected function website()
