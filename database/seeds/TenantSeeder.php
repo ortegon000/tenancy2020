@@ -12,6 +12,6 @@ class TenantSeeder extends Seeder
     public function run()
     {
         factory(\App\User::class)->times(10)->create();
-        factory(\App\Product::class)->times(10)->create();
+        factory(\App\Tenant\Product::class)->times(10)->create();
     }
 }

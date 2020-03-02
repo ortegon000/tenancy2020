@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5cbc4c6-176d-422b-8e55-8953fdda8d23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ProductFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ProductFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/TenantSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TenantSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +132,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Tenant" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -173,7 +177,10 @@
       <workItem from="1582221580487" duration="1063000" />
       <workItem from="1582245902919" duration="61000" />
       <workItem from="1582307431736" duration="5345000" />
-      <workItem from="1582744592121" duration="4342000" />
+      <workItem from="1582744592121" duration="5637000" />
+      <workItem from="1582839169687" duration="1061000" />
+      <workItem from="1582921549228" duration="869000" />
+      <workItem from="1583172024409" duration="1073000" />
     </task>
     <servers />
   </component>
@@ -197,5 +204,9 @@
       <screen x="1982" y="26" width="1858" height="1080" />
     </state>
     <state x="2744" y="485" key="NewPhpFileDialog/62.0.1858.1080/1982.26.1858.1080@1982.26.1858.1080" timestamp="1582748405934" />
+    <state x="492" y="182" key="SettingsEditor" timestamp="1583172638744">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="492" y="182" key="SettingsEditor/62.0.1858.1080/1982.26.1858.1080@62.0.1858.1080" timestamp="1583172638744" />
   </component>
 </project>
