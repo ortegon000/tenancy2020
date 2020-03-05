@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Controlmas.MX
                 </div>
 
                 <div class="links">
