@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
+    - git push origin master
     - export DEPLOYPATH=/home/controlmas/public_html/
     - /bin/cp -a * $DEPLOYPATH
-    - git push origin master
