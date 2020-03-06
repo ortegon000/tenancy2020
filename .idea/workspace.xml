@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5cbc4c6-176d-422b-8e55-8953fdda8d23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cpanel..yml" beforeDir="false" afterPath="$PROJECT_DIR$/.cpanel..yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +180,7 @@
       <workItem from="1583172024409" duration="1073000" />
       <workItem from="1583449486351" duration="856000" />
       <workItem from="1583452294339" duration="907000" />
-      <workItem from="1583524604391" duration="511000" />
+      <workItem from="1583524604391" duration="647000" />
     </task>
     <servers />
   </component>
