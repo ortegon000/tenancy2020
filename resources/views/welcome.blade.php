@@ -82,7 +82,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     @if ( $hostname = app(Hyn\Tenancy\Environment::class)->hostname() )
-                        @dd($hostname)
+                        {{ explode('.', $hostname->fqdn)[0] }}
                     @else
                         Controlmas.MX
                     @endif
