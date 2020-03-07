@@ -81,7 +81,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Controlmas.MX...
+                    @if ( $hostname = app(Environment::class)->hostname() )
+                        {{ $hostname->$hostname }}
+                    @else
+                        Controlmas.MX
+                    @endif
                 </div>
 
                 <div class="links">
